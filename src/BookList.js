@@ -10,6 +10,7 @@ const BookList = (props) => {
                 image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ""} 
                 title={book.volumeInfo.title} 
                 author={book.volumeInfo.authors}
+                handleClick={props.handleClick}
             />
             })
         }

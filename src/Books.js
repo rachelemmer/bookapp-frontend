@@ -9,7 +9,6 @@ export default class Books extends Component {
         searchInput: ''
     }
 
-
     handleChange = (event) => {
         const {name, value} = event.target
         this.setState({[name]: value})
@@ -23,12 +22,16 @@ export default class Books extends Component {
                this.setState({ books: result.items})
         })
     }
+
+    handleClick = (event) => {
+        console.log(event.target.value)
+    }
     
     render() {
         return (
             <div>
                <Search handleChange={this.handleChange} handleSearch={this.handleSearch} /> 
-               <BookList books={this.state.books}/> 
+               <BookList books={this.state.books} handleClick={this.handleClick}/> 
             </div>
         )
     }
