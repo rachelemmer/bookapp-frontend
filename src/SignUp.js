@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 export default class LogIn extends Component {
 
     state = {
-        username: '',
-        password: '',
+        newUsername: '',
+        newPassword: ''
     }
 
     updateInput = event => {
@@ -13,33 +13,32 @@ export default class LogIn extends Component {
         })
     }
 
-    logIn = event => {
+    signUp = event => {
         event.preventDefault()
-
+        
     }
 
     render() {
         return (
-            <div className="login-container">
-            <p className="login-question">Already a user? Log In!</p>
-                <form className="login-form" onSubmit={this.logIn}>
+            <div className="signup-container">
+                <p className="signup-question">Not a user? Sign Up!</p>
+                <form className="signup-form">
                     <input 
-                        value={this.state.username} 
-                        name="username"
+                        value={this.state.newUsername} 
+                        name="newUsername" 
                         type="text" 
-                        placeholder="username" 
+                        placeholder="username"
                         onChange={this.updateInput}
                     />
                     <input 
-                        value={this.state.password} 
-                        name="password" 
+                        value={this.state.newPassword} 
+                        name="newPassword" 
                         type="password" 
                         placeholder="password"
                         onChange={this.updateInput}
                     />
-                    <button type="submit">Log In</button>
+                    <button type="submit">Sign Up</button>
                 </form>
-                <button className="logout-button">Log Out</button>
             </div>
         )
     }

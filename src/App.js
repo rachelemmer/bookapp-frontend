@@ -4,6 +4,7 @@ import './App.css';
 import Books from './Books';
 import Favorites from './Favorites';
 import LogIn from './LogIn'
+import SignUp from './SignUp'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 
@@ -49,6 +50,14 @@ export default class App extends Component {
               path='/login'
               render={(props) =>
                 <LogIn
+                 
+                />
+              }
+            />
+            <Route 
+              path='/signup'
+              render={(props) =>
+                <SignUp
                  
                 />
               }

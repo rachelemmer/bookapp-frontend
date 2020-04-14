@@ -67,6 +67,95 @@ form {
 .signup-question {
   text-align: center;
   font-family: 'Amatic SC', cursive;
-  color: #050505;
-  font-size: 16px;
+  color: #333333;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.login-question {
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  color: #333333;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.login-form input {
+  height: 30px;
+  width: 300px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: 15px; 
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 5px;
+}
+
+.login-form button{
+  height: 35px;
+  width: 60px;
+  outline: none;
+  padding: 5px;
+  border: none;
+  border-radius: 15px; 
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  background-color: #333333;
+  color: white;
+}
+
+.signup-form input {
+  height: 30px;
+  width: 300px;
+  padding: 5px;
+  border: none;
+  border-radius: 15px; 
+  outline: none;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 5px;
+}
+
+.signup-form button {
+  height: 35px;
+  width: 65px;
+  padding: 5px;
+  border: none;
+  border-radius: 15px; 
+  outline: none;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  background-color: #333333;
+  color: white;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;  
+  justify-content: space-around;
+}
+
+.logout-button {
+  align-content: center;
+  margin-top: 50px;
+  height: 35px;
+  width: 65px;
+  padding: 5px;
+  border: none;
+  border-radius: 15px; 
+  outline: none;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  background-color: #333333;
+  color: white;
 }
