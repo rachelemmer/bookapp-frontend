@@ -2,13 +2,59 @@ import React, { Component } from 'react';
 import Header from './Header';
 import './App.css';
 import Books from './Books';
+import Favorites from './Favorites';
+import LogIn from './LogIn'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+
 
 export default class App extends Component {
+
+  state= {
+    favorites: []
+  }
+
+  addToFavorites = (book) => {
+    if(!this.state.favorites.find(favorite => book.id === favorite.id)) {
+      this.setState({
+        favorites: [...this.state.favorites, book]
+      })
+    }
+  }
+
   render() {
     return (
       <div>
-        <Header />
-        <Books />
+        <Router>
+          <Header />
+          <Switch>
+            <Route 
+              path="/books" 
+              render={(props) => 
+                <Books
+                  {...props}
+                  addToFavorites={this.addToFavorites}
+                />
+              }
+            />
+            <Route 
+              path='/favorites'
+              render={(props) =>
+                <Favorites
+                  {...props} 
+                  favorites={this.state.favorites} 
+                />
+              }
+            />
+            <Route 
+              path='/login'
+              render={(props) =>
+                <LogIn
+                 
+                />
+              }
+            />
+          </Switch>
+        </Router>
       </div>
     )
   }

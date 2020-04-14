@@ -6,7 +6,7 @@ export default class Books extends Component {
 
     state = {
         books: [],
-        searchInput: ''
+        searchInput: '',
     }
 
     handleChange = (event) => {
@@ -23,15 +23,12 @@ export default class Books extends Component {
         })
     }
 
-    handleClick = (event) => {
-        console.log(event.target.value)
-    }
     
     render() {
         return (
             <div>
                <Search handleChange={this.handleChange} handleSearch={this.handleSearch} /> 
-               <BookList books={this.state.books} handleClick={this.handleClick}/> 
+               <BookList books={this.state.books} addToFavorites={this.props.addToFavorites}/> 
             </div>
         )
     }

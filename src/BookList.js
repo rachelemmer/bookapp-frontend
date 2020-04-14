@@ -7,10 +7,11 @@ const BookList = (props) => {
             props.books.map(book => {
             return <BookCard 
                 key={book.id} 
+                book={book}
                 image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ""} 
                 title={book.volumeInfo.title} 
                 author={book.volumeInfo.authors}
-                handleClick={props.handleClick}
+                addToFavorites={props.addToFavorites}
             />
             })
         }
