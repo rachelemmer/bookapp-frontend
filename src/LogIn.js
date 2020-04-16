@@ -8,14 +8,36 @@ export default class LogIn extends Component {
     }
 
     updateInput = event => {
+        const {name, value} = event.target
         this.setState({
-            [event.target.name]: event.target.value
+            [name]: value
         })
     }
 
     logIn = event => {
         event.preventDefault()
+        const {username, password} = this.state
+        
+        fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({username, password})
+        })
+        .then(response => response.json())
+        .then(result => {
+            localStorage.setItem("token", result.token)
+        })
+        .then(alert("You have successfully logged in!"))   
+            
+        this.setState({
+            username: '',
+            password: ''
+        })
+    }
 
+    logOut = event => {
+        localStorage.clear()
+        alert("You have successfully logged out!")
     }
 
     render() {
@@ -39,7 +61,7 @@ export default class LogIn extends Component {
                     />
                     <button type="submit">Log In</button>
                 </form>
-                <button className="logout-button">Log Out</button>
+                <button className="logout-button" onClick={this.logOut}>Log Out</button>
             </div>
         )
     }
