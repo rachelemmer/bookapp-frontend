@@ -27,18 +27,23 @@ export default class LogIn extends Component {
         .then(result => {
             localStorage.setItem("token", result.token)
         })
-        .then(alert("You have successfully logged in!"))   
+        .then( () => {
+            alert("You have successfully logged in!")
+            this.getBooks()
+        })   
             
         this.setState({
             username: '',
             password: ''
         })
+        
     }
 
     logOut = event => {
         localStorage.clear()
         alert("You have successfully logged out!")
     }
+
 
     render() {
         return (

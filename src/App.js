@@ -13,13 +13,21 @@ export default class App extends Component {
   state= {
     favorites: []
   }
-
-  addToFavorites = (book) => {
-    if(!this.state.favorites.find(favorite => book.id === favorite.id)) {
-      this.setState({
-        favorites: [...this.state.favorites, book]
-      })
-    }
+ 
+  getBooks = () => {
+    fetch("http://localhost:3000/favorites", {
+      method: "GET",
+      headers: { 
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem("token")}`
+      }
+    }).then(response => response.json())
+        .then(books => this.setState({favorites: books}))
+        .catch(error => console.error(error))
+  }
+  
+  componentDidMount(){
+    this.getBooks()
   }
 
   render() {
@@ -50,7 +58,7 @@ export default class App extends Component {
               path='/login'
               render={(props) =>
                 <LogIn
-                 
+                getBooks={this.getBooks}
                 />
               }
             />

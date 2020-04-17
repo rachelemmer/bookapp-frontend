@@ -8,9 +8,9 @@ const BookList = (props) => {
             return <BookCard 
                 key={book.id} 
                 book={book}
-                image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ""} 
-                title={book.volumeInfo.title} 
-                author={book.volumeInfo.authors}
+                image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "" || book.image} 
+                title={book.volumeInfo.title || book.title} 
+                author={book.volumeInfo.authors || book.authors}
             />
             })
         }
