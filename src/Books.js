@@ -28,7 +28,7 @@ export default class Books extends Component {
         return (
             <div>
                <Search handleChange={this.handleChange} handleSearch={this.handleSearch} /> 
-               <BookList books={this.state.books} addToFavorites={this.props.addToFavorites}/> 
+               <BookList books={this.state.books} /> 
             </div>
         )
     }
