@@ -20,6 +20,8 @@ const BookList = (props) => {
                 book={book}
                 image={image} 
                 title={book.title || book.volumeInfo.title} 
+                displayFavorite={props.displayFavorite}
+                removeFromFavorites={props.removeFromFavorites}
             />
             })
         }

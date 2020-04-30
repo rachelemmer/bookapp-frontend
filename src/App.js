@@ -13,6 +13,19 @@ export default class App extends Component {
   state= {
     favorites: []
   }
+
+  displayFavorite = (book) => {
+    this.setState({
+      favorites: [...this.state.favorites, book]
+    })
+  }
+
+  removeFromFavorites = (book) => {
+    const filtered = this.state.favorites.filter(fav => fav.id !== book.id)
+    this.setState({
+      favorites: filtered
+    })
+  }
  
   getBooks = () => {
     fetch("http://localhost:3000/favorites", {
@@ -42,7 +55,7 @@ export default class App extends Component {
               render={(props) => 
                 <Books
                   {...props}
-                  
+                  displayFavorite={this.displayFavorite}
                 />
               }
             />
@@ -52,6 +65,7 @@ export default class App extends Component {
                 <Favorites
                   {...props} 
                   favorites={this.state.favorites} 
+                  removeFromFavorites={this.removeFromFavorites}
                 />
               }
             />
