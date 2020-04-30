@@ -5,7 +5,10 @@ export default function Favorites(props) {
     
     return (
         <div>
-            <BookList books={props.favorites} removeFromFavorites={props.removeFromFavorites}/> 
+            <BookList 
+                books={props.favorites} 
+                removeFromFavorites={props.removeFromFavorites}
+            /> 
         </div>
     )
 }

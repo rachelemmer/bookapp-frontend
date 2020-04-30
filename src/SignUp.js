@@ -26,7 +26,7 @@ export default class LogIn extends Component {
             body: JSON.stringify({username, password})
         })
             .then(response => response.json())
-            .then(alert("You have successfully signed up!"))   
+            .then(alert("You have successfully signed up for Book Finder!"))   
             
         this.setState({
             username: '',

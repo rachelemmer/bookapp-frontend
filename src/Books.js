@@ -23,12 +23,17 @@ export default class Books extends Component {
         })
     }
 
-    
     render() {
         return (
             <div>
-               <Search handleChange={this.handleChange} handleSearch={this.handleSearch} /> 
-               <BookList books={this.state.books} displayFavorite={this.props.displayFavorite}/> 
+               <Search 
+                    handleChange={this.handleChange} 
+                    handleSearch={this.handleSearch} 
+                /> 
+               <BookList 
+                    books={this.state.books} 
+                    displayFavorite={this.props.displayFavorite}
+               /> 
             </div>
         )
     }

@@ -39,7 +39,6 @@ form {
   font-family: 'Montserrat', sans-serif;
 }
 
-
 .card img {
   height: 20rem;
   width: 15rem;
@@ -48,7 +47,6 @@ form {
   border-radius: 17px;
   cursor: pointer;
 }
-
 
 .nav-bar {
   display: flex;
