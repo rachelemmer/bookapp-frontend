@@ -1,7 +1,6 @@
 ## Title: Book Finder 
 
-![bookapp-screen-recording]
-(bookapp-gif.gif)
+https://media.giphy.com/media/iHsYywbUJeMHiFxtIJ/giphy.gif
 
 #### Description: 
 
