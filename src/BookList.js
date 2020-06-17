@@ -15,6 +15,8 @@ const BookList = (props) => {
                 }
                 
             return <BookCard 
+                setIsFavorite={props.setIsFavorite}
+                history={props.history}
                 key={book.id} 
                 book={book}
                 image={image} 

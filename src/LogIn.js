@@ -26,7 +26,13 @@ export default class LogIn extends Component {
         .then(response => response.json())
         .then(result => {
             localStorage.setItem("token", result.token)
-            result.token ? alert("You have successfully logged in!") : alert("Wrong username or password!")
+            this.props.setIsLoggedIn(true)
+            if (result.token) {
+                this.props.history.push("Books")
+            }
+            else {
+                alert("Wrong username or password! Please try again.")
+            }
         })
         .then( () => {
             this.props.getBooks()

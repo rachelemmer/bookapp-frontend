@@ -11,7 +11,17 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 export default class App extends Component {
 
   state= {
-    favorites: []
+    favorites: [],
+    isLoggedIn: false,  
+    isFavorite: true
+  }
+
+  setIsLoggedIn = (value) => {
+    this.setState({isLoggedIn: value})
+  }
+
+  setIsFavorite = (value) => {
+    this.setState({isFavorite: value})
   }
 
   displayFavorite = (book) => {
@@ -56,6 +66,7 @@ export default class App extends Component {
                 <Books
                   {...props}
                   displayFavorite={this.displayFavorite}
+                  setIsFavorite={this.setIsFavorite}
                 />
               }
             />
@@ -74,6 +85,7 @@ export default class App extends Component {
               render={(props) =>
                 <LogIn
                 getBooks={this.getBooks}
+                setIsLoggedIn={this.setIsLoggedIn} {...props}
                 />
               }
             />
