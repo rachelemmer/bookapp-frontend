@@ -2,12 +2,15 @@ import React from 'react'
 
 function BookCard(props) {
     
-    const {book, displayFavorite, removeFromFavorites} = props
+    const {book, displayFavorite, removeFromFavorites, setIsFavorite, history} = props
 
     function handleClick() {
         if (displayFavorite) {
             displayFavorite(book)
-            postBook(book) }
+            postBook(book)
+            setIsFavorite(true)
+            history.push("Favorites")
+         }
         else {
             removeFromFavorites(book)
             deleteBook(book)

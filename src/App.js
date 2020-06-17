@@ -12,11 +12,16 @@ export default class App extends Component {
 
   state= {
     favorites: [],
-    isLoggedIn: false 
+    isLoggedIn: false,  
+    isFavorite: true
   }
 
   setIsLoggedIn = (value) => {
     this.setState({isLoggedIn: value})
+  }
+
+  setIsFavorite = (value) => {
+    this.setState({isFavorite: value})
   }
 
   displayFavorite = (book) => {
@@ -61,6 +66,7 @@ export default class App extends Component {
                 <Books
                   {...props}
                   displayFavorite={this.displayFavorite}
+                  setIsFavorite={this.setIsFavorite}
                 />
               }
             />

@@ -31,8 +31,10 @@ export default class Books extends Component {
                     handleSearch={this.handleSearch} 
                 /> 
                <BookList 
+                    history={this.props.history}
                     books={this.state.books} 
                     displayFavorite={this.props.displayFavorite}
+                    setIsFavorite={this.props.setIsFavorite}
                /> 
             </div>
         )
