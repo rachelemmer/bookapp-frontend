@@ -34,6 +34,6 @@ On the Backend this application uses Rails version 6.0.2.1 & Ruby 2.6.1. Fork & 
 This application was created by Rachel Emmer. Rachel is a student at Flatiron School Software Engineering Bootcamp and an avid reader. The goal of the application was to be able to search books, as well as keep track of favorites so that one might be able to share their favorite books with friends & family. 
 
 
-#### The backend of this repository can be found here: https://github.com/rachelemmer/bookapp_backend
+#### The backend of this repository can be found here: https://github.com/rachelemmer/bookapp-backend
 
 
